@@ -1,5 +1,5 @@
 [maxscale]                                                             
-threads=auto
+threads=1
 
 [Splitter Service]                                                             
 type=service                                                                   
@@ -11,29 +11,26 @@ passwd=maxscalepass
 [Splitter Listener]                                                            
 type=listener                                                                  
 service=Splitter Service                                                       
-protocol=MariaDBClient
-port=3307
+protocol=MySQLClient                                                           
+port=3307                                                                      
 
 [rancher-1]
 type=server                                                                    
-address=192.168.1.151                                                       
+address=10.40.87.53                                                      
 port=3306                                                                      
-protocol=MariaDBBackend
-priority=1
+protocol=MySQLBackend
 
 [rancher-2]
 type=server
-address=192.168.1.152
+address=10.40.87.54
 port=3306
-protocol=MariaDBBackend
-priority=2
+protocol=MySQLBackend
 
 [rancher-3]
 type=server
-address=192.168.1.153
+address=10.40.87.55
 port=3306
-protocol=MariaDBBackend
-priority=3
+protocol=MySQLBackend
 
 [Galera Monitor]                                                               
 type=monitor                                                                   
