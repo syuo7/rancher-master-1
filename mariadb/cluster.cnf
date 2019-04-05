@@ -1,5 +1,5 @@
 [mysqld]
-max_allowed_packet=1G
+#max_allowed_packet=1G
 log_bin=ON
 log_slave_updates=1
 binlog_format=row
